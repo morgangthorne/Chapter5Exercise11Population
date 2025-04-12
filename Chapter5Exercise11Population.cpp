@@ -83,7 +83,6 @@ int Get_User_Input_Population_Increase_Day(float & User_Population, float & Dail
     }
     
     
-    
     return (User_Population, Daily_Population_Increase, Days);
   
 }
