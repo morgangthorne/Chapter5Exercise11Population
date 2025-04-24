@@ -19,6 +19,7 @@ using namespace std;
 //Function Prototypes
 int Get_User_Input_Population_Increase_Day(float & User_Population, float & Daily_Population_Increase, int & Days);
 void Display_Population_Increase(float User_Population, float Daily_Population_Increase, int Days);
+bool GetRepeatInfo();
 
 
 int main()
@@ -29,25 +30,24 @@ int main()
     
     int Days = 0;
     
-    char Repeat_Program = 'N';
-    char User_Repeat;
+    bool User_Repeat;
 
     //Will run once, User will have to enter Y or N to either repeat the loop or end it.
     do {
 
         Get_User_Input_Population_Increase_Day(User_Population, Daily_Population_Increase, Days);
-        
+
         Display_Population_Increase(User_Population, Daily_Population_Increase, Days);
 
-        cout << "Would you like to run this program again (Y/N): ";
-        cin >> User_Repeat;
+        User_Repeat = GetRepeatInfo();
     } 
-    while (User_Repeat != Repeat_Program); {
+    while (User_Repeat); {
         cout << "Thank you for using Population Calculator V1!";
         return 0;
     }
-
 }
+
+
 
 //Function asks user for Population, Increase Percentage, and the amount of days it will grow, returns users answers to main
 int Get_User_Input_Population_Increase_Day(float & User_Population, float & Daily_Population_Increase, int & Days) {
@@ -103,4 +103,12 @@ void Display_Population_Increase(float User_Population, float Daily_Population_I
     }
 
 
+}
+
+//Allows user to choose whether they want to repeat program or end it
+bool GetRepeatInfo() {
+    char choice;
+    cout << "Would you like to repeat Y/N: ";
+    cin >> choice;
+    return (choice == 'Y' || choice == 'y');
 }
