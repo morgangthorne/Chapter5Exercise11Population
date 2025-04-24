@@ -67,7 +67,7 @@ int Get_User_Input_Population_Increase_Day(float & User_Population, float & Dail
     cin >> Daily_Population_Increase;
 
     while (Daily_Population_Increase <= 0) { //Answer Validation, Input cannot equal 0 or lower
-        cout << "Error, Please enter a positive integer";
+        cout << "Error, Please enter a positive integer: ";
         cin >> Daily_Population_Increase;
     }
 
